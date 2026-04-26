@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr.Games</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/videos.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <!--Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body id="top">
+    
+    <!-- Menú de navegación -->
+    <header>
+    
+        <nav class="navbar navbar-dark bg-navbar fixed-top shadow-sm py-2">
+            <!-- Cometas -->
+            <div class="shooting-stars"></div>
+            
+            <div class="container-fluid flex-column">
+
+                <div class="d-flex align-items-center justify-content-between flex-wrap mx-lg-auto w-98">
+
+                    <!-- Pantalla grande -->
+                    <a href="index.html" class="d-none d-lg-flex align-items-center text-decoration-none">
+                        <img src="/img/Logo2.png" alt="Logo" style="width: 30px; height: auto;"  class="logo me-1">
+                        <span class="navbar-brand mb-0 ms-2">Mr.Games</span>
+                    </a>
+
+                    <form class="d-none d-lg-flex ms-auto" role="search">
+                        <input class="form-control form-control-sm me-2" type="search" placeholder="Search games..." aria-label="Buscar">
+                        <button class="btn btn-outline-light btn-sm" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                    <!-- Pantalla chica -->
+                    <div class="d-flex d-lg-none w-100 align-items-center justify-content-between">
+                        
+                        <a href="index.html" class="text-decoration-none">
+                            <img src="/img/Logo2.png" alt="Logo" class="logo me-2">
+                        </a>
+
+                        <a href="index.html" class="navbar-brand mb-0 mx-auto text-center">Mr.Games</a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Enlaces pantalla grande -->
+                <ul class="navbar-nav w-100 d-none d-lg-flex flex-row justify-content-center mt-2">
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="index.html">Explore</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="categorias.html">Categories</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="top.html">Top Games</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="noticias.html">News</a></li>
+                </ul>
+
+                <!-- Menú colapsado -->
+                <div class="collapse navbar-collapse w-100 mt-2 d-lg-none" id="navbarCollapse">
+                    
+                    <form class="d-flex mb-3" role="search">
+                        <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar juegos..." aria-label="Buscar">
+                        <button class="btn btn-outline-light btn-sm" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                    <ul class="navbar-nav w-100 d-flex flex-column align-items-center">
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="index.html">Explore</a></li>   
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="categorias.html">Categories</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="top.html">Top Games</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link boton-brinco" href="noticias.html">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container mt-5 pt-3">
+            <div class="row">
+                <div class="col-md-12">
+                  
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+
+
+    <div class="particle-container" id="particleContainer">
+        <!-- Contenido principal --> 
+        <div class="content">
+            <main class="container-fluid px-0">
+            <div id="videos" class="video-wrapper"></div>
+            </main>
+            <br><br>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+
+            <!-- Redes sociales -->
+            <div class="footer-section social">
+                <h3>Follow us</h3>
+                <p>Stay connected with us on social media.</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-section newsletter">
+                <h3>Subscribe</h3>
+                <p>Subscribe to our newsletter for the latest news and offers.</p>
+                <form>
+                    <input type="email" placeholder="Email">
+                    <button type="submit">Subscribe now</button>
+                </form>
+            </div>
+
+            <!-- Políticas y créditos -->
+            <div class="footer-section links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mr.Games</p>
+            <a href="#top" class="back-to-top">↑ Back to top</a>
+        </div>
+    </footer>
+
+    <!-- Font Awesome CDN -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    
+    <!-- App JS -->
+    <script src="/js/videos.js"></script>
+    <script src="/js/search.js"></script>
+</body>
+</html>

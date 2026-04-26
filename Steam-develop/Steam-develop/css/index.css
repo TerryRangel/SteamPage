@@ -1,0 +1,224 @@
+.hero 
+{
+  height: 100vh;
+}
+
+.card-game 
+{
+    flex: 0 0 400px;
+    overflow: visible; 
+    position: relative;
+}
+
+.card-inner 
+{
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.card-game:hover
+{
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+    z-index: 5;
+}
+
+/* Flechas */
+.carousel-container 
+{
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 20px 60px;
+}
+
+.carousel 
+{
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overflow-y: visible;
+}
+
+.carousel::-webkit-scrollbar 
+{
+    display: none;
+}
+
+.card-game 
+{
+    flex: 0 0 400px;
+}
+
+.precio 
+{
+    color: var(--gris);
+}
+
+.arrow 
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: transparent; 
+    color: var(--gris);              
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: none;         
+    transition: all 0.3s ease;
+}
+
+.arrow:hover 
+{
+    color: var(--claro);
+    transform: translateY(-50%) scale(1.2);
+}
+
+.arrow.left 
+{ 
+    left: 15px; 
+}
+
+.arrow.right 
+{ 
+    right: 15px; 
+}
+
+.arrow.hidden 
+{
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Fondo Mr.Games */
+.collage-background-scroll 
+{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.collage-background-scroll::before 
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; 
+    height: 100%;
+    background-image: url('/img/Fondo.png'); 
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    animation: moveBackground 60s linear infinite;
+    filter: blur(3px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.collage-background-scroll::after 
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(27, 38, 59, 1) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes moveBackground 
+{
+    from 
+    {
+        background-position: 0 0;
+    }
+    to 
+    {
+        background-position: -100% 0; 
+    }
+}
+
+.welcome-text 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    font-weight: bold;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
+}
+
+.spinner-container 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+.spinner-container i 
+{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.spinner-container p 
+{
+    font-size: 1.1rem;
+}
+ 
+@media (max-width: 768px) 
+{
+    .carousel 
+    {
+        gap: 10px;
+    }
+
+    .card-game 
+    {
+        flex: 0 0 180px;
+    }
+
+    .arrow 
+    {
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+
+    h1, h2 
+    {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .carousel-container 
+    {
+        padding: 0 10px;
+    }
+
+    .navbar-nav 
+    {
+        font-size: 0.9rem;
+    }
+}

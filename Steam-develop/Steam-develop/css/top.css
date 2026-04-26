@@ -1,0 +1,325 @@
+h2 
+{
+    color: var(--girs);
+}
+
+.card 
+{
+    background: var(--grisOscuro);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover 
+{
+    transform: translateY(-5px);
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 20px rgba(255,255,255,0.2) !important;
+}
+
+.card-img-top 
+{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body 
+{
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title 
+{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.card-text 
+{
+    color: var(--gris);
+}
+
+.top-link 
+{
+    margin-top: 15px;
+    align-self: flex-start;
+    color: var(--gris);
+    text-decoration: none;
+}
+
+.top-link .nav-pills:hover 
+{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.badge.bg-info 
+{
+    background-color: var(--claro) !important;
+    color: #fff !important;
+    font-size: 0.75rem;
+    padding: 0.4em 0.6em;
+    border-radius: 6px;
+}
+
+.btn.btn-primary.mt-3 
+{
+    background-color: #373737; /* Fondo gris oscuro */
+    border: 2px solid white;   /* Borde blanco */
+    color: white;              /* Texto blanco */
+    transition: background-color 0.3s, color 0.3s;
+    width: 5rem;
+}
+
+.btn.btn-primary.mt-3:hover {
+    background-color: white;  /* Fondo blanco al hacer hover */
+    color: #373737;           /* Texto gris oscuro para contraste */
+}
+
+.section-carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+#section-carousel {
+  display: flex;
+  width: 600%; /* 6 secciones = 600% */
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-section {
+  width: 100%;
+  padding: 1rem;
+  flex-shrink: 0;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.carousel-nav.left {
+  left: 0;
+}
+
+.carousel-nav.right {
+  right: 0;
+}
+/* Contenedor de tabs */
+.nav-tabs, .nav-pills {
+  border-bottom: 2px solid var(--medio);
+  justify-content: center; /* Centrar tabs */
+  margin-bottom: 2rem;
+}
+
+/* Estilo general de las tabs/pills */
+.nav-tabs .nav-link,
+.nav-pills .nav-link {
+  color: var(--grisMedio);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  margin: 0 0.3rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+/* Cuando están inactivas, fondo medio oscuro */
+.nav-tabs .nav-link:not(.active),
+.nav-pills .nav-link:not(.active) {
+  background-color: var(--fuerte);
+}
+
+/* Cuando están activas */
+.nav-tabs .nav-link.active,
+.nav-pills .nav-link.active {
+  color: var(--gris);
+  background: linear-gradient(135deg, var(--medio), var(--claro));
+  box-shadow: 0 4px 10px rgba(65, 90, 119, 0.6);
+}
+
+/* Hover en tabs inactivas */
+.nav-tabs .nav-link:hover,
+.nav-pills .nav-link:hover {
+  color: var(--gris);
+  background-color: var(--medio);
+  cursor: pointer;
+}
+
+/* Contenedor del contenido de cada tab */
+.tab-content {
+  background-color: var(--fuerte);
+  border-radius: 0px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(27, 38, 59, 0.5);
+  color: var(--gris);
+  min-height: 250px; /* ajusta según contenido */
+}
+.ranking-badge {
+  background-color: var(--fuerte);
+  color: var(--gris);
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  z-index: 10;
+}
+
+.ranking-badge:hover {
+  background-color: var(--medio);
+  transform: scale(1.1);
+  cursor: default;
+}
+
+/* PARTÍCULAS */
+.particle-container 
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--fuerte);
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+/* Partículas individuales */
+.particle 
+{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 
+    box-shadow 0.5s ease, 
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+/* Efecto de brillo */
+.particle.glow 
+{
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9);
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+/*Animacion botones */
+.boton-brinco 
+{
+    transition: transform 0.2s ease-in-out;
+}
+
+.boton-brinco:hover 
+{
+    animation: saltar 0.5s ease;
+}
+
+@keyframes saltar 
+{
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-8px); }
+    50%  { transform: translateY(0); }
+    70%  { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Brillo del Logo*/
+.navbar-brand {
+  text-shadow: 0 0 5px #667eea, 0 0 10px #764ba2;
+  animation: neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px #667eea, 0 0 10px #764ba2;
+  }
+  to {
+    text-shadow: 0 0 10px #667eea, 0 0 20px #764ba2, 0 0 30px #8a2be2;
+  }
+}
+
+/* COMETA */
+/* Efecto de cometas/estrellas fugaces */
+.shooting-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shooting-star {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8));
+  transform-origin: left center;
+  animation: shootingStar 8s linear infinite;
+  opacity: 0;
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(2000px) translateY(-10px);
+    opacity: 0;
+  }
+}

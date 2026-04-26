@@ -1,0 +1,208 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+ 
+}
+
+.video-wrapper {
+    margin-top: 20px;
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.video-card {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail,
+iframe {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: none;
+}
+#scroll-right-btn,#scroll-left-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color:var(--medio);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#scroll-right-btn:hover, #scroll-left-btn:hover {
+  background-color: var(--fuerte);
+  transform: scale(1.1);
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100vw;
+}
+
+.video-card {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-card iframe,
+.video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PARTÍCULAS */
+.particle-container 
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--fuerte);
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+/* Partículas individuales */
+.particle 
+{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 
+    box-shadow 0.5s ease, 
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+/* Efecto de brillo */
+.particle.glow 
+{
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.9);
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+/*Animacion botones */
+.boton-brinco 
+{
+    transition: transform 0.2s ease-in-out;
+}
+
+.boton-brinco:hover 
+{
+    animation: saltar 0.5s ease;
+}
+
+@keyframes saltar 
+{
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-8px); }
+    50%  { transform: translateY(0); }
+    70%  { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Brillo del Logo*/
+.navbar-brand {
+  text-shadow: 0 0 5px #667eea, 0 0 10px #764ba2;
+  animation: neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px #667eea, 0 0 10px #764ba2;
+  }
+  to {
+    text-shadow: 0 0 10px #667eea, 0 0 20px #764ba2, 0 0 30px #8a2be2;
+  }
+}
+
+/* COMETA */
+/* Efecto de cometas/estrellas fugaces */
+.shooting-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shooting-star {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8));
+  transform-origin: left center;
+  animation: shootingStar 8s linear infinite;
+  opacity: 0;
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(2000px) translateY(-10px);
+    opacity: 0;
+  }
+}
