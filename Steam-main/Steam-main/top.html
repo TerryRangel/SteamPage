@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr.Games - Top games</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/explorar.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <!--Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <!-- Menú de navegación -->
+    <header>
+    
+        <nav class="navbar navbar-dark bg-navbar fixed-top shadow-sm py-2">
+            <div class="container-fluid flex-column">
+
+                <div class="d-flex align-items-center justify-content-between flex-wrap mx-lg-auto w-98">
+
+                    <!-- Pantalla grande -->
+                    <a href="index.html" class="d-none d-lg-flex align-items-center text-decoration-none">
+                        <img src="/img/Logo2.png" alt="Logo" style="width: 30px; height: auto;"  class="logo me-1">
+                        <span class="navbar-brand mb-0 ms-2">Mr.Games</span>
+                    </a>
+
+                    <form class="d-none d-lg-flex ms-auto" role="search">
+                        <input class="form-control form-control-sm me-2" type="search" id="searchInput" placeholder="Buscar juegos..." aria-label="Buscar">
+                        <button class="btn btn-outline-light btn-sm" type="submit"><i class="fas fa-search" id="searchButton"></i></button>
+                    </form>
+
+                    <!-- Pantalla chica -->
+                    <div class="d-flex d-lg-none w-100 align-items-center justify-content-between">
+                        
+                        <a href="index.html" class="text-decoration-none">
+                            <img src="/img/Logo2.png" alt="Logo" class="logo me-2">
+                        </a>
+
+                        <a href="index.html" class="navbar-brand mb-0 mx-auto text-center">Mr.Games</a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Enlaces pantalla grande -->
+                <ul class="navbar-nav w-100 d-none d-lg-flex flex-row justify-content-center mt-2">
+                    <li class="nav-item mx-2"><a class="nav-link" href="index.html">Explore</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="categorias.html">Categories</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="noticias.html">News</a></li>
+                </ul>
+
+                <!-- Menú colapsado -->
+                <div class="collapse navbar-collapse w-100 mt-2 d-lg-none" id="navbarCollapse">
+                    
+                    <form id="searchForm" class="d-flex mb-3" role="search">
+                        <input id="searchInput" class="form-control form-control-sm me-2" type="search" placeholder="Buscar juegos..." aria-label="Buscar">
+                        <button class="btn btn-outline-light btn-sm" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                    <ul class="navbar-nav w-100 d-flex flex-column align-items-center">
+                    <li class="nav-item mx-2"><a class="nav-link" href="index.html">Explore</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="categorias.html">Categories</a></li>
+                    <li class="nav-item mx-2"><a class="nav-link" href="noticias.html">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="content">
+        
+        <main class="container my-5">
+
+            <h2 class="mb-4 text-center">Top 10 del mes</h2>
+            <div class="row" id="game-list"></div>
+
+            <h2 class="mt-5 mb-4 text-center">Top Ventas</h2>
+            <div class="row" id="top-sales-list"></div>
+
+            <h2 class="mt-5 mb-4 text-center">Mejores Calificados</h2>
+            <div class="row" id="top-rated-list"></div>
+
+            <h2 class="mt-5 mb-4 text-center">Más jugadores</h2>
+            <div class="row" id="most-played-list"></div>
+
+            <h2 class="mt-5 mb-4 text-center">Más guardados por usuarios</h2>
+            <div class="row" id="most-added-list"></div>
+
+            <h2 class="mt-5 mb-4 text-center">Con más reseñas</h2>
+            <div class="row" id="most-reviewed-list"></div>
+
+            <div class="modal fade" id="gameInfoModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gameModalTitle"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="gameModalImage" class="img-fluid mb-3" alt="">
+                        <p id="gameModalDescription"></p>
+                        <p><strong>Plataformas:</strong> <span id="gameModalPlatforms"></span></p>
+                        <p><strong>Géneros:</strong> <span id="gameModalGenres"></span></p>
+                        <p><strong>Metacritic:</strong> <span id="gameModalMetacritic"></span></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+
+                <!-- Redes sociales -->
+                <div class="footer-section social">
+                    <h3>Follow us</h3>
+                    <p>Stay connected with us on social media.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section newsletter">
+                    <h3>Subscribe</h3>
+                    <p>Subscribe to our newsletter for the latest news and offers.</p>
+                    <form>
+                        <input type="email" placeholder="Email">
+                        <button type="submit">Subscribe now</button>
+                    </form>
+                </div>
+
+                <!-- Políticas y créditos -->
+                <div class="footer-section links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mr.Games</p>
+                <a href="#top" class="back-to-top">↑ Back to top</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/a2d0c6a981.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    
+    <!-- App JS -->
+    
+    <script src="./js/top.js"></script>
+</body>
+</html>
